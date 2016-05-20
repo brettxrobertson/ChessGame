@@ -15,6 +15,7 @@ import model.pieces.AbstractPiece;
 import eventHandling.Subject;
 
 /**
+ * Facade pattern
  * To handle interaction with the Controller and other classes in Model
  * 
  * @author Brett Robertson (s3437164)
