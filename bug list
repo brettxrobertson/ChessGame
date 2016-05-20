@@ -1,0 +1,11 @@
+Model
+1.I need to know when no pieces remain on the board to end the game
+
+View
+1. need remove the auto call of new game dialog as this is creating race conditions. all controller to call welcome dialog for new game
+2. 
+
+Controller
+1. No new game functionaility. refer view 1.  
+2. at state 3 the button clicks are not being acknowledged
+3. game timer not implemented in the state machine due to lack of understanding of it

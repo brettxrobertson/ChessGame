@@ -1,0 +1,119 @@
+Assignment 1
+
+Specifications
+
+Version 0.1
+
+Design Methodology Requirements
+
+1. Apply SOLID and GRASP Design Principles
+2. Select and use Design Patterns
+
+Problem
+
+1. One Chess Board
+	A. Characteristics:
+		i.	Shape: Square
+		ii.	Design: 6 columns by 6 rows with a checkers patterns using black and white
+		iii. 	Output: When a player has a turn and selects on of thier pieces all valid moves are to be highlighted for the individual or combined piece.
+2. Four Pieces
+	A. Name: Rook
+		i. Characteristics:
+			i.	Shape: Castle
+			ii.	Movement: May move Vertically or Horizontally n co-ordinates until the end of the board
+				is reached or until another piece is reached, in which case move into that pieces co-ordinate.
+			iii.	Combine: When moved to another piece of the same colour and the piece does not consist of any 
+				variation of castle, combine. 
+			iv: 	When killed: update the opponents score by 5, remove castle from chess board (maybe place in some container?)
+			v:	Colour: May be black or white
+			vi: 	Qnty: 2 Black, 2 White
+			vii:	Start Location: Black, one in each corner of the top of Chess Board, (0,0) and (5,0)
+						White, one in each corner of the bottom of Chess Board, (0,5) and (5,5)
+	B. Name: Bishop
+		i. Characteristics:
+			i.	Shape: Bishop's Hat
+			ii.	Movement: May move Diagonally n co-ordinates until the end of the board	is reached or until another piece is reached, 
+				in which case move into that pieces co-ordinate.
+			iii.	Combine: When moved to another piece of the same colour and the piece does not consist of any 
+				variation of Bishop, combine. 
+			iv: 	When killed: update the opponents score by 5, remove Bishop from chess board (maybe place in some container?)
+			v:	Colour: May be black or white
+			vi: 	Qnty: 2 Black, 2 White
+			vii:	Start Location: Black, one in each in the co-ordinate one in from the corner at the top of Chess Board, (1,0) and (4,0)
+						White, one in each in the co-ordinate one in from the corner at the bottom of Chess Board, (1,5) and (4,5)
+	C. Name: Knight
+		i. Characteristics:
+			i.	Shape: Horse's Head
+			ii.	Movement: May only move two co-ordinates vertical and horizontal and one co-ordinate perpendicular (L), only if result is still on the chess board.
+			iii.	Combine: When moved to another piece of the same colour and the piece does not consist of any 
+				variation of Knight, combine. 
+			iv: 	When killed: update the opponents score by 5, remove Knight from chess board (maybe place in some container?)
+			v:	Colour: May be black or white
+			vi: 	Qnty: 2 Black, 2 White
+			vii:	Start Location: Black, one on the black centre co-ordinate, one on the white centre co-ordinate, at the top of Chess Board, (2,0) and (3,0)
+						White, one on the black centre co-ordinate, one on the white centre co-ordinate, at the bottom of Chess Board, (2,5) and (3,5)
+	D. Name: Barrier
+		i. Characteristics:
+			i.	Shape: Star
+			ii.	Movement: Nil
+			iii.	Combine: Nil 
+			iv: 	When killed: update the opponents score by 1, remove castle from board (maybe place in some container?)
+			v:	Colour: Blue
+			vi: 	Qnty: 12
+			vii:	Start Location: Fill rows 2 and 3 (initial row = 0)
+			
+3. Combine:
+	A. Characteristics:
+		i. 	Occurrence: When a piece moves into a co-ordinate occupied by a piece of the same colour which is not the same type as itself they are known as combined.
+		ii. 	Selecting Combination/Spliting: : For a players turn if they select a combined piece they will be prompted to move with a single piece of the combination, or the entire combination
+			(may allow further spliting, if three exist, spilt to two and move??)
+		iii. 	Movement: For the selected combination, moves of that type are valid
+		iv.  	When killed: update oppenent score by killing individual pieces.
+		v.   	Shape: the shapes are reduced in size and painted onto co-ordinate (may what something nicer?)
+		vi. 	Colour: Same as Piece
+	
+4. Game Rules
+	A. Number of Turns: 
+		i. 	Select: User input before start of game, locked when game starts
+		ii. 	Range: 10 - 50
+	B. Playing Order
+		i. 	Start: The player with the white pieces always moves first (chess rules)
+		ii. 	Continued play: After start every turn is alternate between black and white pieces
+	C. Game End
+		i. 	End: When both players have had n turns
+		ii. 	Winner: Player with the most points wins
+5. Game Control (just ideas)
+		i. 	Start Game: Upon start game the game pulls defaults
+			- Board pieces reset
+			- Scores reset
+			- Turns = 10
+		ii.	When a tile is clicked
+			is a piece already selected?
+			a.	True, does this piece reside in this tile? (b)
+			b.	True, Is there more than one piece? (c)
+			c.	True, combine/split prompt.
+			a.	False, does the tile hold any active user piece? (d)
+			d.	True, go to b. True.
+			d.	False, ignore click
+			c.	False, deselect piece
+			b.	False, is this tile a valid move? (e)
+			e.	True, move selected piece
+			e.	False, ignore
+
+		iii.	Upon Completion: Displays winner, has play again or finish button. 
+			Finish 	- takes back to display to update turns input
+				- Reset scores
+				- Resets Pieces on Chess Board
+			Reset	- Uses previous Turn input
+				- Resets Score
+				- Resets Pieces on Chess Board
+		
+5. Visual
+	A. Must have a Chess board
+	B. Pieces
+	C. output number of turns
+	D. Input to select number of turns
+	E. Button to start game
+	F. Score Display
+	
+	
